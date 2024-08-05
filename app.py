@@ -71,7 +71,7 @@ def messages():
     name_sess = session.get('name')
 
     # Fetch the last 100 messages from the database
-    cur.execute("SELECT user, message FROM (SELECT * FROM messages ORDER BY no DESC LIMIT 100) subquery ORDER BY no ASC;")
+    cur.execute("SELECT user, message FROM messages;")
     datas = cur.fetchall()
 
     # Render the messages with the new template
