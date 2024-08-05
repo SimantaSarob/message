@@ -46,7 +46,6 @@ def signup():
 def sign_up():
     name = request.form.get("name")
     password = request.form.get("password")
-    print(name,password)
     if len(name) < 6 or len(name) > 20 or len(password) < 6 or len(password) > 20 or name.isspace():
         return render_template("error.html", error="pass or name is bigger then 20 char or less then 6 char or name is just a white space.", back_url="/signup", back_url_="go back?")
     else:
@@ -80,4 +79,4 @@ def messages():
 
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True, port=5500)
+    socketio.run(app, debug=True, port=5000)
